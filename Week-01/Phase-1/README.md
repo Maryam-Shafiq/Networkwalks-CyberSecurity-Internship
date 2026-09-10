@@ -26,16 +26,29 @@ The lab environment was configured with a dedicated NAT Network so that virtual 
 - NetworkManager (`nmcli`)
 - Linux networking commands
 
-## Network Configuration
+## Lab Architecture
+
+![Lab Architecture](screenshots/Lab_Architecture.png)
+
+## ⚙️ Lab Configuration
+
+The following configuration was used for the cybersecurity lab environment during Phase 1.
 
 | Component | Configuration |
 |---|---|
-| Network Type | NAT Network |
-| Network Name | `NATNetwork` |
-| IPv4 Network | `10.0.0.0/24` |
-| DHCP | Enabled |
-| Kali Linux IP | `10.0.0.2/24` |
-| DNS | `8.8.8.8` |
+| 🖥️ Host OS | Windows |
+| 🧠 Host RAM | 16 GB |
+| ⚡ Processor | AMD Ryzen 7 |
+| 🧰 Hypervisor | VirtualBox 7.2.16 |
+| 🐉 Security OS | Kali Linux 2026.2 |
+| 🧠 Kali RAM | 2048 MB |
+| 🌐 Virtual Network | NAT Network |
+| 📡 Network Name | `NATNetwork` |
+| 🔢 Network Address | `10.0.0.0/24` |
+| 🐧 Kali IP Address | `10.0.0.2/24` |
+| 🚪 Default Gateway | `10.0.0.1` |
+| 🌍 DNS Server | `8.8.8.8` |
+| 📡 DHCP | Enabled |
 
 ---
 
@@ -75,9 +88,30 @@ The first network adapter was attached to the NAT Network created in the previou
 
 ![Kali Linux Network Adapter](screenshots/03-kali-network-adapter.png)
 
+The VM was allocated:
+
+```text
+RAM: 2048 MB
+```
+
 ---
 
-## 5. Verified the Kali Linux IP Address
+## 5. Configure the Kali Linux Network
+
+The Kali Linux network configuration was checked and configured with a consistent IPv4 address.
+
+```text
+IP Address: 10.0.0.2
+Subnet Mask: 255.255.255.0
+Gateway: 10.0.0.1
+DNS: 8.8.8.8
+```
+
+![Kali Linux IP Address](screenshots/08-Configure-Kali-Linux.png)
+
+---
+
+## 6. Verified the Kali Linux IP Address
 
 The following command was used in Kali Linux to check the available network interfaces and assigned IP addresses:
 
@@ -97,7 +131,7 @@ This confirms that Kali Linux successfully received an address within the `10.0.
 
 ---
 
-## 6. Configured DNS
+## 7.  Verifying Configured DNS
 
 The IPv4 DNS configuration was set to:
 
@@ -111,7 +145,7 @@ This DNS server can be used to resolve domain names into IP addresses.
 
 ---
 
-## 7. Verified the Routing Configuration
+## 8. Verified the Routing Configuration
 
 The routing configuration was checked using:
 
@@ -126,7 +160,7 @@ This was used to verify the network route and identify the gateway used by the K
 
 ---
 
-## 8. Tested Gateway Connectivity
+## 9. Tested Gateway Connectivity
 
 Connectivity to the NAT Network gateway was tested using:
 
